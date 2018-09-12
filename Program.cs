@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace VCCode_Mac
 {
@@ -6,7 +7,12 @@ namespace VCCode_Mac
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            foreach (var subfolder in Directory.GetDirectories("../uploads"))
+            {
+                var metadataFilePath = Path.Combine(subfolder, "metadata.json");
+                Console.WriteLine($"Reading {metadataFilePath}");
+                
+            }
         }
     }
 }
